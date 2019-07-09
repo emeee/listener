@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ..
+    ports:
+      - "8080:8080"
+
+  activemq:
+    image: webcenter/activemq
+    ports:
+      - "8186:8161"
+      - "61616:61616"
+    environment:
+      ACTIVEMQ_CONFIG_MINMEMORY: 512
+      ACTIVEMQ_CONFIG_MAXMEMORY: 768
+      ACTIVEMQ_ADMIN_LOGIN: admin
+      ACTIVEMQ_ADMIN_PASSWORD: password

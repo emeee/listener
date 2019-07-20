@@ -21,7 +21,7 @@ public class ActiveMQConfig {
   @Value("${spring.activemq.user}")
   private String activemqUser;
 
-  @Value("${spring.activemq.pass}")
+  @Value("${spring.activemq.password}")
   private String activemqPass;
 
   @Bean

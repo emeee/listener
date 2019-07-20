@@ -2,23 +2,28 @@ package com.example.app.domain;
 
 public class Message {
 
-  private String message;
   private String to;
-
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
-  }
+  private String body;
 
   public String getTo() {
     return to;
   }
 
+  public String getBody() {
+    return body;
+  }
+
   public void setTo(String to) {
     this.to = to;
+  }
+
+  public void setBody(String body) {
+    this.body = body;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("Message{to=%s, body=%s}", getTo(), getBody());
   }
 
 }

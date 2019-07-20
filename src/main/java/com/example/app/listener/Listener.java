@@ -7,10 +7,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Listener {
 
-  @JmsListener(destination = "destination", containerFactory = "myFactory")
+  @JmsListener(destination = "${spring.activemq.queue}", containerFactory = "myFactory")
   public void receiveMessage(Message message) {
-    System.out.println("Received <" + message + ">");
-
+    System.out.println("Received message: " + message);
     // Do something
   }
 

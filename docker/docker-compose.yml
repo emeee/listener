@@ -8,7 +8,18 @@ services:
     env_file:
       - .env
     depends_on:
+      - "db"
       - "activemq"
+
+  db:
+    image: postgres:9.6
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+      PGDATA: /tmp
 
   activemq:
     image: webcenter/activemq

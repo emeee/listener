@@ -12,14 +12,14 @@ import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Producer {
+public class MessageService {
 
   private final JmsTemplate jmsTemplate;
 
   private final String queue;
 
   @Autowired
-  public Producer(final JmsTemplate jmsTemplate,
+  public MessageService(final JmsTemplate jmsTemplate,
       @Value("${spring.activemq.queue}") final String queue) {
     this.jmsTemplate = jmsTemplate;
     this.queue = queue;

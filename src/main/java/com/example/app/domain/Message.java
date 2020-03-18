@@ -18,7 +18,7 @@ public class Message {
   @JsonIgnore
   private long id;
 
-  @Column
+  @Column(nullable = false)
   private String destination;
 
   @Column
